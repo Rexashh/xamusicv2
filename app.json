@@ -1,7 +1,7 @@
 {
-  "name": "Yukki Music Bot",
+  "name": "Yukki X Xa Music Bot",
   "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  "logo": "https://telegra.ph/file/fecb50042cabee93dc20b.jpg",
   "keywords": [
   "python3",
   "telegram",
@@ -120,7 +120,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/Rexashh/YukkiMusicBot",
+      "value": "https://github.com/Rexashh/Yukki",
       "required": true
     },
     "UPSTREAM_BRANCH": {
