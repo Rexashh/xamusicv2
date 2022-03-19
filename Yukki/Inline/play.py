@@ -26,11 +26,11 @@ def url_markup(videoid, duration, user_id, query, query_type):
         ],
         [
             InlineKeyboardButton(
-                text="🔍 Lebih Banyak Hasil",
+                text="🔍 Lebih ",
                 callback_data=f"Search {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🗑 Tutup Pencarian",
+                text="🗑 Tutup ",
                 callback_data=f"forceclose {query}|{user_id}",
             ),
         ],
