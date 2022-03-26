@@ -36,15 +36,15 @@ __MODULE__ = "Admin"
 __HELP__ = """
 
 
-/pause - Pause the playing music on voice chat.
+/pause - Jeda musik yang diputar di obrolan suara.
 
-/resume - Resume the paused music on voice chat.
+/resume - Melanjutkan musik yang dijeda di obrolan suara.
 
-/skip - Skip the current playing music on voice chat
+/skip - Lewati musik yang sedang diputar di obrolan suara
 
-/stop - Stop the playout.
+/stop - Memberhentikan Musik
 
-/queue - Check queue list.
+/queue - Periksa daftar antrian.
 """
 
 
@@ -69,7 +69,7 @@ async def admins(_, message: Message):
         await music_off(chat_id)
         await pause_stream(chat_id)
         await message.reply_text(
-            f"🎧 Voicechat Paused by {message.from_user.mention}!"
+            f"🎧 Obrolan Suara Dijeda oleh {message.from_user.mention}!"
         )
     if message.command[0][1] == "e":
         if await is_music_playing(message.chat.id):
@@ -77,7 +77,7 @@ async def admins(_, message: Message):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await message.reply_text(
-            f"🎧 Voicechat Resumed by {message.from_user.mention}!"
+            f"🎧 Obrolan Suara Dilanjutkan oleh {message.from_user.mention}!"
         )
     if message.command[0][1] == "t" or message.command[0][1] == "n":
         if message.chat.id not in db_mem:
@@ -92,7 +92,7 @@ async def admins(_, message: Message):
         await remove_active_video_chat(chat_id)
         await stop_stream(chat_id)
         await message.reply_text(
-            f"🎧 Voicechat End/Stopped by {message.from_user.mention}!"
+            f"🎧 Obrolan Suara Berakhir/Dihentikan oleh {message.from_user.mention}!"
         )
     if message.command[0][1] == "k":
         if message.chat.id not in db_mem:
