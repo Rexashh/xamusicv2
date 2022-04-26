@@ -52,7 +52,7 @@ def url_markup2(videoid, duration, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🗑 Tutup Search",
+                text="🗑 Tutup ",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
@@ -175,7 +175,7 @@ def secondary_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="☰ Menu Lainnya", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="🗑 Tutup Menu", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -190,7 +190,7 @@ def secondary_markup2(videoid, user_id):
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="🗑 Tutup Menu", callback_data=f"close"),
         ],
     ]
     return buttons
