@@ -74,22 +74,22 @@
       "required": true
     },
     "STRING_SESSION2": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant kedua, jika tidak ada dilahkan /skip",
+      "description": "Masukan Pyrogram String Session. Untuk Asisstant kedua, jika tidak ada lewati atau /skip",
       "value": "",
       "required": false
     },
     "STRING_SESSION3": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant ketiga, jika tidak ada dilahkan /skip",
+      "description": "Masukan Pyrogram String Session. Untuk Asisstant ketiga, jika tidak ada lewati atau /skip",
       "value": "",
       "required": false
     },
     "STRING_SESSION4": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant keempat, jika tidak ada dilahkan /skip",
+      "description": "Masukan Pyrogram String Session. Untuk Asisstant keempat, jika tidak ada lewati atau /skip",
       "value": "",
       "required": false
     },
     "STRING_SESSION5": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant kelima, jika tidak ada dilahkan /skip",
+      "description": "Masukan Pyrogram String Session. Untuk Asisstant kelima, jika tidak ada lewati atau /skip",
       "value": "",
       "required": false
     },
@@ -120,11 +120,11 @@
     },
     "UPSTREAM_REPO": {
       "description": "Silahkan /skip saja ",
-      "value": "https://github.com/Rexashh/Yukki",
+      "value": "https://github.com/Rexashh/yukkixa",
       "required": true
     },
     "UPSTREAM_BRANCH": {
-      "description": "Bisa di /skip atau masukan master",
+      "description": "gausah diganti",
       "value": "master",
       "required": true
     }
