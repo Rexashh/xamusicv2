@@ -94,7 +94,7 @@ async def initiate_bot():
             status="[bold blue]Importation Completed!",
         )
     console.print(
-        "[bold green]Congrats!! Yukki Music Bot has started successfully!\n"
+        "[bold green]Selamat!! Bot Musik telah Aktif !\n"
     )
     try:
         await app.send_message(
@@ -103,13 +103,13 @@ async def initiate_bot():
         )
     except Exception as e:
         print(
-            "\nBot has failed to access the log Channel. Make sure that you have added your bot to your log channel and promoted as admin!"
+            "\nBot gagal mengakses Group log. Pastikan Anda telah menambahkan bot Anda ke Group log Anda dan dipromosikan sebagai admin!"
         )
         console.print(f"\n[red]Stopping Bot")
         return
     a = await app.get_chat_member(LOG_GROUP_ID, BOT_ID)
     if a.status != "administrator":
-        print("Promote Bot as Admin in Logger Channel")
+        print("Promosikan Bot sebagai Admin di Group LOG")
         console.print(f"\n[red]Stopping Bot")
         return
     console.print(f"\n┌[red] Bot Started as {BOT_NAME}!")
