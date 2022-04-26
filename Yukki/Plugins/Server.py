@@ -266,13 +266,13 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**DYNO USAGE**
+**Penggunaan Dyno**
 
 <u>Usage:</u>
-Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
+Terpakai: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
 
 <u>Remaining Quota:</u>
-Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
+Tersisa: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
 
 
@@ -312,13 +312,13 @@ async def update_(client, message):
     )
     for info in repo.iter_commits(f"HEAD..origin/{UPSTREAM_BRANCH}"):
         updates += f"<b>➣ #{info.count()}: [{info.summary}]({REPO_}/commit/{info}) by -> {info.author}</b>\n\t\t\t\t<b>➥ Commited on:</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "<b>A new update is available for the Bot!</b>\n\n➣ Pushing Updates Now</code>\n\n**<u>Updates:</u>**\n\n"
+    _update_response_ = "<b>Pembaruan baru tersedia untuk Bot!</b>\n\n➣ Update Sekarang</code>\n\n**<u>Updates:</u>**\n\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
         link = await paste_queue(updates)
         url = link + "/index.txt"
         nrs = await response.edit(
-            f"<b>A new update is available for the Bot!</b>\n\n➣ Pushing Updates Now</code>\n\n**<u>Updates:</u>**\n\n[Click Here to checkout Updates]({url})"
+            f"<b>A Pembaruan baru tersedia untuk Bot!</b>\n\n➣ Update Sekarang</code>\n\n**<u>Updates:</u>**\n\n[Klik Disini untuk lihat List Update]({url})"
         )
     else:
         nrs = await response.edit(
@@ -328,7 +328,7 @@ async def update_(client, message):
     if await is_heroku():
         try:
             await response.edit(
-                f"{nrs.text}\n\nBot was updated successfully on Heroku! Now, wait for 2 - 3 mins until the bot restarts!"
+                f"{nrs.text}\n\nBot berhasil diperbarui di Heroku! Sekarang, tunggu 2 - 3 menit sampai bot restart!"
             )
             os.system(
                 f"{XCB[5]} {XCB[7]} {XCB[9]}{XCB[4]}{XCB[0]*2}{XCB[6]}{XCB[4]}{XCB[8]}{XCB[1]}{XCB[5]}{XCB[2]}{XCB[6]}{XCB[2]}{XCB[3]}{XCB[0]}{XCB[10]}{XCB[2]}{XCB[5]} {XCB[11]}{XCB[4]}{XCB[12]}"
@@ -336,7 +336,7 @@ async def update_(client, message):
             return
         except Exception as err:
             await response.edit(
-                f"{nrs.text}\n\nSomething went wrong while initiating reboot! Please try again later or check logs for more info."
+                f"{nrs.text}\n\nTerjadi masalah saat memulai boot ulang! Silakan coba lagi nanti atau periksa log Heroku untuk info lebih lanjut."
             )
             return await app.send_message(
                 LOG_GROUP_ID,
@@ -344,7 +344,7 @@ async def update_(client, message):
             )
     else:
         await response.edit(
-            f"{nrs.text}\n\nBot was updated successfully! Now, wait for 1 - 2 mins until the bot reboots!"
+            f"{nrs.text}\n\nBot berhasil diperbarui di Heroku! Sekarang, tunggu 2 - 3 menit sampai bot restart!"
         )
         os.system("pip3 install -r requirements.txt")
         os.system(f"kill -9 {os.getpid()} && bash start")
@@ -354,7 +354,7 @@ async def update_(client, message):
 
 @app.on_message(filters.command("restart") & filters.user(SUDOERS))
 async def restart_(_, message):
-    response = await message.reply_text("Restarting....")
+    response = await message.reply_text("Merestart Bot....")
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
@@ -376,7 +376,7 @@ async def restart_(_, message):
                 try:
                     await app.send_message(
                         x,
-                        f"{MUSIC_BOT_NAME} has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
+                        f"{MUSIC_BOT_NAME} baru saja me-restart dirinya sendiri. Maaf atas masalah ini.\n\nMulai mainkan lagi setelah 10-15 detik.",
                     )
                     await remove_active_chat(x)
                     await remove_active_video_chat(x)
@@ -384,12 +384,12 @@ async def restart_(_, message):
                     pass
             heroku3.from_key(HEROKU_API_KEY).apps()[HEROKU_APP_NAME].restart()
             await response.edit(
-                "**Heroku Restart**\n\nReboot has been initiated successfully! Wait for 1 - 2 minutes until the bot restarts."
+                "**Heroku Restart**\n\nBot berhasil diperbarui di Heroku! Sekarang, tunggu 2 - 3 menit sampai bot restart!"
             )
             return
         except Exception as err:
             await response.edit(
-                "Something went wrong while initiating reboot! Please try again later or check logs for more info."
+                "Terjadi masalah saat memulai boot ulang! Silakan coba lagi nanti atau periksa log Heroku untuk info lebih lanjut."
             )
             return
     else:
@@ -404,7 +404,7 @@ async def restart_(_, message):
             try:
                 await app.send_message(
                     x,
-                    f"{MUSIC_BOT_NAME} has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
+                    f"{MUSIC_BOT_NAME} baru saja me-restart dirinya sendiri. Maaf atas masalah ini.\n\nMulai mainkan lagi setelah 10-15 detik.",
                 )
                 await remove_active_chat(x)
                 await remove_active_video_chat(x)
@@ -439,6 +439,6 @@ async def restart_(_, message):
         except:
             pass
         await response.edit(
-            "Reboot has been initiated successfully! Wait for 1 - 2 minutes until the bot restarts."
+            "Bot berhasil direstart di Heroku! Sekarang, tunggu 2 - 3 menit sampai bot restart!"
         )
         os.system(f"kill -9 {os.getpid()} && bash start")
