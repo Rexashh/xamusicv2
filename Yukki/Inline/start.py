@@ -31,7 +31,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah", callback_data="shikhar"
+                    text="📋 Menu Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -45,7 +45,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah", callback_data="shikhar"
+                    text="📋 Menu Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -55,7 +55,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="📋Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -64,7 +64,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah", callback_data="shikhar"
+                    text="📋 Menu Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -74,7 +74,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -83,7 +83,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah", callback_data="shikhar"
+                    text="📋 Menu Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -93,10 +93,10 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="⚡Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -108,13 +108,13 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah",
+                    text="📋 Menu Perintah",
                     callback_data="search_helper_mess",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Tambahkan Saya Ke Group Mu",
+                    "➕ Tambahkan Ke Group",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -124,7 +124,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah",
+                    text="📋 Menu Perintah",
                     callback_data="search_helper_mess",
                 ),
             ],
@@ -136,7 +136,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="⚡Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -145,7 +145,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah",
+                    text="📋 Menu Perintah",
                     callback_data="search_helper_mess",
                 ),
             ],
@@ -157,7 +157,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -166,7 +166,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Menu Perintah",
+                    text="📋 Menu Perintah",
                     callback_data="search_helper_mess",
                 ),
             ],
@@ -178,10 +178,10 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="⚡Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -262,7 +262,7 @@ def usermarkup():
         ],
         [
             InlineKeyboardButton(
-                text="📋 List Pengguna Auth", callback_data="USERLIST"
+                text="📖 List Pengguna Auth", callback_data="USERLIST"
             )
         ],
         [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
