@@ -80,7 +80,7 @@ async def activevc(_, message: Message):
         duration_min = db_mem[message.chat.id]["total"]
         got_queue = get_queue.get(message.chat.id)
         if not got_queue:
-            await mystic.edit(f"Nothing in Queue")
+            await mystic.edit(f"Tidak Ada Antrian")
         fetched = []
         for get in got_queue:
             fetched.append(get)
