@@ -159,7 +159,7 @@ async def userdel(_, message: Message):
 @app.on_message(filters.command("sudolist"))
 async def sudoers_list(_, message: Message):
     sudoers = await get_sudoers()
-    text = "⭐️<u> **Owners:**</u>\n"
+    text = "👨‍💻<u> **Owners:**</u>\n"
     sex = 0
     for x in OWNER_ID:
         try:
@@ -177,7 +177,7 @@ async def sudoers_list(_, message: Message):
                 user = user.first_name if not user.mention else user.mention
                 if smex == 0:
                     smex += 1
-                    text += "\n⭐️<u> **Sudo Users:**</u>\n"
+                    text += "\n🤴<u> **Sudo Users:**</u>\n"
                 sex += 1
                 text += f"{sex}➤ {user}\n"
             except Exception:
@@ -254,11 +254,11 @@ async def logger(_, message):
     if state == "enable":
         user_id = 5
         await add_on(user_id)
-        await message.reply_text("Enabled Logging")
+        await message.reply_text("Log Diaktifkan digroup Log")
     elif state == "disable":
         user_id = 5
         await add_off(user_id)
-        await message.reply_text("Logging Disabled")
+        await message.reply_text("Log Dimatikan")
     else:
         await message.reply_text(usage)
 
@@ -279,12 +279,12 @@ async def ban_globally(_, message):
         from_user = message.from_user
         if user.id == from_user.id:
             return await message.reply_text(
-                "You want to gban yourself? How Fool!"
+                "Apakah kamu ingin Mengban diri sendiri? Stress!"
             )
         elif user.id == BOT_ID:
-            await message.reply_text("Should i block myself? Lmao Ded!")
+            await message.reply_text("Mau block bot ini?goblok!")
         elif user.id in SUDOERS:
-            await message.reply_text("You want to block a sudo user? KIDXZ")
+            await message.reply_text("Mau block Pengguna Sudo? Bego")
         else:
             await add_gban_user(user.id)
             served_chats = []
@@ -292,7 +292,7 @@ async def ban_globally(_, message):
             for chat in chats:
                 served_chats.append(int(chat["chat_id"]))
             m = await message.reply_text(
-                f"**Initializing Global Ban on {user.mention}**\n\nExpected Time : {len(served_chats)}"
+                f"**Memulai Global Banned untuk {user.mention}**\n\nExpected Time : {len(served_chats)}"
             )
             number_of_chats = 0
             for sex in served_chats:
@@ -305,7 +305,7 @@ async def ban_globally(_, message):
                 except Exception:
                     pass
             ban_text = f"""
-__**New Global Ban on {MUSIC_BOT_NAME}**__
+__**Global Banned baru di{MUSIC_BOT_NAME}**__
 
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user.mention}
@@ -335,7 +335,7 @@ __**New Global Ban on {MUSIC_BOT_NAME}**__
     else:
         is_gbanned = await is_gbanned_user(user_id)
         if is_gbanned:
-            await message.reply_text("Already Gbanned.")
+            await message.reply_text("Sudah Digban.")
         else:
             await add_gban_user(user_id)
             served_chats = []
