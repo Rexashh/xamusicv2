@@ -65,7 +65,7 @@ def play_genre_playlist(user_id, type, videoid):
             ),
             InlineKeyboardButton(
                 text=f"Poppunk",
-                callback_data=f"play_playlist {user_id}|{type}|Popunk",
+                callback_data=f"play_playlist {user_id}|{type}|Poppunk",
             ),
         ],
         [
@@ -83,7 +83,7 @@ def play_genre_playlist(user_id, type, videoid):
                 text="⬅️ Go Back",
                 callback_data=f"main_playlist {videoid}|{type}|{user_id}",
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data="close"),
+            InlineKeyboardButton(text="🗑 Tutup", callback_data="close"),
         ],
     ]
     return buttons
@@ -118,7 +118,7 @@ def add_genre_markup(user_id, type, videoid):
             ),
             InlineKeyboardButton(
                 text=f"✚ Remix",
-                callback_data=f"add_playlist {videoid}|{type}|Metal",
+                callback_data=f"add_playlist {videoid}|{type}|Remix",
             ),
         ],
         [
@@ -145,7 +145,7 @@ def check_genre_markup(type, videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Poppunk", callback_data=f"check_playlist {type}|Weeb"
+                text=f"Poppunk", callback_data=f"check_playlist {type}|Poppunk"
             ),
             InlineKeyboardButton(
                 text=f"Sad", callback_data=f"check_playlist {type}|Sad"
@@ -178,7 +178,7 @@ def check_genre_markup(type, videoid, user_id):
                 text=f"Lainnya", callback_data=f"check_playlist {type}|Lainnya"
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Tutup Menu", callback_data="close")],
+        [InlineKeyboardButton(text="🗑 Tutup", callback_data="close")],
     ]
     return buttons
 
@@ -215,7 +215,7 @@ def paste_queue_markup(url):
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton(text="Periksa Daftar Putar Antrian", url=f"{url}")],
-        [InlineKeyboardButton(text="🗑 Tutup Menu", callback_data=f"close")],
+        [InlineKeyboardButton(text="🗑 Tutup", callback_data=f"close")],
     ]
     return buttons
 
@@ -229,7 +229,7 @@ def fetch_playlist(user_name, type, genre, user_id, url):
             ),
         ],
         [InlineKeyboardButton(text="Periksa Daftar Putar Antrian", url=f"{url}")],
-        [InlineKeyboardButton(text="🗑 Tutup Menu", callback_data=f"close")],
+        [InlineKeyboardButton(text="🗑 Tutup", callback_data=f"close")],
     ]
     return buttons
 
