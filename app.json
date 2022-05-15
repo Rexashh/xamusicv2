@@ -98,7 +98,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "Silahkan /skip saja ",
-      "value": "https://github.com/Rexashh/yukkixa",
+      "value": "https://github.com/Rexashh/xamusicv2",
       "required": true
     },
     "UPSTREAM_BRANCH": {
