@@ -35,11 +35,11 @@ loop = asyncio.get_event_loop()
 __MODULE__ = "Play"
 __HELP__ = f"""
 
-/play [Reply to any Audio or Video] or [YT Link] or [Music Name]
-- Stream Audio + Video on Voice Chat
+/play [Balas ke Audio atau Video] atau [YOUTUBE Link] atau [Music Name]
+- Streaming Audio + Video di Obrolan Suara
 
-/song [Youtube URL or Search Query] 
-- Download the particular query in audio or video format.
+/song [URL Youtube atau Kueri Penelusuran] 
+- Unduh kueri tertentu dalam format audio atau video.
 """
 
 
@@ -51,7 +51,7 @@ async def choose_playmode(_, CallbackQuery):
     videoid, duration, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song.", show_alert=True
+            "Ini bukan untukmu! Cari Lagu Anda Sendiri.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
     await CallbackQuery.edit_message_reply_markup(
@@ -65,7 +65,7 @@ async def quality_markup(_, CallbackQuery):
     if not limit:
         await CallbackQuery.message.delete()
         return await CallbackQuery.message.reply_text(
-            "**No Limit Defined for Video Calls**\n\nSet a Limit for Number of Maximum Video Calls allowed on Bot by /set_video_limit [Sudo Users Only]"
+            "**Mo Limit Defined for Video Calls**\n\nSet a Limit for Number of Maximum Video Calls allowed on Bot by /set_video_limit [Sudo Users Only]"
         )
     count = len(await get_active_video_chats())
     if int(count) == int(limit):
