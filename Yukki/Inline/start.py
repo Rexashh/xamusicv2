@@ -55,7 +55,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📋Support Group", url=f"{SUPPORT_GROUP}"
+                    text="👥Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
