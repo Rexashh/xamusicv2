@@ -39,7 +39,7 @@ HELPABLE = {}
 
 async def initiate_bot():
     with console.status(
-        "[magenta] Finalizing Booting...",
+        "[magenta] Menyelesaikan Booting...",
     ) as status:
         ass_count = len(random_assistant)
         if ass_count == 0:
@@ -99,7 +99,7 @@ async def initiate_bot():
     try:
         await app.send_message(
             LOG_GROUP_ID,
-            "<b>Congrats!! Music Bot has started successfully!</b>",
+            "<b>Selamat!! Bot Musik telah dimulai dengan sukses!</b>",
         )
     except Exception as e:
         print(
@@ -213,11 +213,11 @@ async def initiate_bot():
         try:
             await LOG_CLIENT.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Logger Client has started successfully!</b>",
+                "<b>Congrats!! Klien Logger telah berhasil dimulai!</b>",
             )
         except Exception as e:
             print(
-                "\nLogger Client has failed to access the log Channel. Make sure that you have added your Logger Account to your log channel and promoted as admin!"
+                "\ntelah gagal mengakses Group log. Pastikan Anda telah menambahkan Akun asistant ke Group log Anda dan dipromosikan sebagai admin!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
@@ -226,7 +226,7 @@ async def initiate_bot():
             await LOG_CLIENT.join_chat("rexaprivateroom")
         except:
             pass
-    console.print(f"└[red] Yukki Music Bot Boot Completed.")
+    console.print(f"└[red] Boot Bot Musik Selesai.")
     if STRING1 != "None":
         await pytgcalls1.start()
     if STRING2 != "None":
