@@ -75,10 +75,10 @@ def inl_mark(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                text="⬅️  Kembali", callback_data=f"good {videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="🗑 Tutup Menu", callback_data=f"close2"
+                text="🗑 Tutup", callback_data=f"close2"
             ),
         ],
     ]
@@ -108,14 +108,14 @@ async def boom(_, CallbackQuery):
         thumb_image_path = result["thumbnails"][0]["url"]
         channel = channel = result["channel"]["name"]
         fetched = f"""
-🔍**Track Downloaded**
+🔍**Tracks Downloaded**
 
 ❇️**Title:** {title}
 
-⏳**Duration:** {duration} Mins
+⏳**Durasi:** {duration} Mins
 👀**Views:** `{views}`
-🎥**Channel Name:** {channel}
-🔗**Video Link:** [Link]({yturl})
+🎥**Nama channel:** {channel}
+🔗**Link video:** [Link]({yturl})
 
 ⚡️ __Youtube Inline Download Powered By {MUSIC_BOT_NAME}__"""
     filext = "%(title)s.%(ext)s"
@@ -223,7 +223,7 @@ async def boom(_, CallbackQuery):
 
 def p_mark(link, channel):
     buttons = [
-        [InlineKeyboardButton(text="Watch on Youtube", url=f"{link}")],
+        [InlineKeyboardButton(text="Tonton di Youtube", url=f"{link}")],
     ]
     return buttons
 
@@ -291,7 +291,7 @@ def duration(vid_file_path):
             if "duration" in s:
                 return float(s["duration"])
 
-    raise Exception("duration Not found")
+    raise Exception("durasi Tidak ditemukan")
 
 
 async def downloadvideocli(command_to_exec):
