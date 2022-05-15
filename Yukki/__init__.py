@@ -105,9 +105,9 @@ async def initiate_bot():
     )
     console.print(header)
     with console.status(
-        "[magenta] Yukki Music Bot Booting...",
+        "[magenta] Booting Bot Musik...",
     ) as status:
-        console.print("┌ [red]Booting Up The Clients...\n")
+        console.print("┌ [red]Mem-boot Klien...\n")
         await app.start()
         console.print("└ [green]Booted Bot Client")
         console.print("\n┌ [red]Booting Up The Assistant Clients...")
@@ -225,11 +225,11 @@ async def initiate_bot():
         try:
             repo = Repo()
         except GitCommandError:
-            console.print("┌ [red] Checking Git Updates!")
+            console.print("┌ [red] Memeriksa Pembaruan Git!")
             console.print("└ [red]Git Command Error\n")
             return
         except InvalidGitRepositoryError:
-            console.print("┌ [red] Checking Git Updates!")
+            console.print("┌ [red] Memeriksa Pembaruan Git!")
             repo = Repo.init()
             if "origin" in repo.remotes:
                 origin = repo.remote("origin")
@@ -254,7 +254,7 @@ async def initiate_bot():
             await install_requirements(
                 "pip3 install --no-cache-dir -r requirements.txt"
             )
-            console.print("└ [red]Git Client Update Completed\n")
+            console.print("└ [red]Pembaruan Klien Git Selesai\n")
 
 
 loop.run_until_complete(initiate_bot())
