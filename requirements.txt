@@ -6,7 +6,7 @@ pillow
 pyrogram==1.4.16
 hachoir
 lyricsgenius
-py-tgcalls==0.9.0b1
+py-tgcalls==0.9.0
 wget
 python-dotenv
 youtube-search-python
