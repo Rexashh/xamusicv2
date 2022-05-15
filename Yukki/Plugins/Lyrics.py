@@ -11,11 +11,11 @@ from Yukki import MUSIC_BOT_NAME, app
 __MODULE__ = "Lyrics"
 __HELP__ = """
 
-/Lyrics [Music Name]
-- Searches Lyrics for the particular Music on web.
+/Lyrics [Nama Music]
+- Cari Lirik untuk Musik tertentu di web.
 
-**Note**:
-Inline button of Lyrics has some bugs. Searches only 50% results. You can use command instead if you want lyrics for any playing music.
+**catatan**:
+Tombol sebaris Lirik memiliki beberapa bug. Pencarian hanya 50% hasil. Anda dapat menggunakan perintah sebagai gantinya jika Anda ingin lirik untuk musik apa pun yang diputar.
 
 """
 
@@ -28,7 +28,7 @@ async def lyricssex(_, CallbackQuery):
         id, user_id = callback_request.split("|")
     except Exception as e:
         return await CallbackQuery.message.edit(
-            f"Error Occured\n**Possible reason could be**:{e}"
+            f"Terjadi Kesalahan\n**Kemungkinan alasannya adalah**:{e}"
         )
     url = f"https://www.youtube.com/watch?v={id}"
     print(url)
@@ -38,7 +38,7 @@ async def lyricssex(_, CallbackQuery):
             title = result["title"]
     except Exception as e:
         return await CallbackQuery.answer(
-            "Sound not found. Youtube issues.", show_alert=True
+            "Suara tidak ditemukan. Masalah Youtube.", show_alert=True
         )
     x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     y = lyricsgenius.Genius(x)
@@ -47,19 +47,19 @@ async def lyricssex(_, CallbackQuery):
     S = y.search_song(t, get_full_info=False)
     if S is None:
         return await CallbackQuery.answer(
-            "Lyrics not found :p", show_alert=True
+            "Lirik tidak ditemukan☹️", show_alert=True
         )
     await CallbackQuery.message.delete()
     userid = CallbackQuery.from_user.id
     usr = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
     xxx = f"""
-**Lyrics Search Powered By {MUSIC_BOT_NAME}**
+**Pencarian Lirik By {MUSIC_BOT_NAME}**
 
-**Searched By:-** {usr}
-**Searched Song:-** __{title}__
+**Dicari oleh:-** {usr}
+**Lagu yang Dicari:-** __{title}__
 
-**Found Lyrics For:-** __{S.title}__
-**Artist:-** {S.artist}
+**Menemukan Lirik Untuk:-** __{S.title}__
+**Artis:-** {S.artist}
 
 **__Lyrics:__**
 
@@ -91,11 +91,11 @@ async def lrsearch(_, message: Message):
     if S is None:
         return await m.edit("Lyrics not found :p")
     xxx = f"""
-**Lyrics Search Powered By {MUSIC_BOT_NAME}**
+**Pencarian Lirik By {MUSIC_BOT_NAME}**
 
-**Searched Song:-** __{query}__
-**Found Lyrics For:-** __{S.title}__
-**Artist:-** {S.artist}
+**Lagu yang Dicari:-** __{query}__
+**Menemukan Lirik Untuk:-** __{S.title}__
+**Artis:-** {S.artist}
 
 **__Lyrics:__**
 
