@@ -89,22 +89,22 @@ async def activevc(_, message: Message):
         current_playing = fetched[0][0]
         user_name = fetched[0][1]
 
-        msg = "**Queued List**\n\n"
-        msg += "**Currently Playing:**"
+        msg = "**Daftar Antrian**\n\n"
+        msg += "**Sedang diputar:**"
         msg += "\n▶️" + current_playing[:30]
-        msg += f"\n   ╚By:- {user_name}"
-        msg += f"\n   ╚Duration:- Remaining `{dur_left}` out of `{duration_min}` Mins."
+        msg += f"\n   ╚Oleh:- {user_name}"
+        msg += f"\n   ╚Durasi:- Tersisa `{dur_left}` dari `{duration_min}` Mins."
         fetched.pop(0)
         if fetched:
             msg += "\n\n"
-            msg += "**Up Next In Queue:**"
+            msg += "**Berikutnya Dalam Antrian:**"
             for song in fetched:
                 name = song[0][:30]
                 usr = song[1]
                 dur = song[2]
                 msg += f"\n⏸️{name}"
-                msg += f"\n   ╠Duration : {dur}"
-                msg += f"\n   ╚Requested by : {usr}\n"
+                msg += f"\n   ╠Durasi : {dur}"
+                msg += f"\n   ╚Diminta oleh : {usr}\n"
         if len(msg) > 4096:
             await mystic.delete()
             filename = "queue.txt"
@@ -119,7 +119,7 @@ async def activevc(_, message: Message):
         else:
             await mystic.edit(msg)
     else:
-        await message.reply_text(f"Nothing in Queue")
+        await message.reply_text(f"Tidak ada dalam Antrian")
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
@@ -130,7 +130,7 @@ async def activevc(_, message: Message):
         for chat in chats:
             served_chats.append(int(chat["chat_id"]))
     except Exception as e:
-        await message.reply_text(f"**Error:-** {e}")
+        await message.reply_text(f"**Kesalahan:-** {e}")
     text = ""
     j = 0
     for x in served_chats:
@@ -147,7 +147,7 @@ async def activevc(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("Tidak Ada Obrolan Suara Aktif")
     else:
         await message.reply_text(
             f"**Active Voice Chats:-**\n\n{text}",
@@ -163,7 +163,7 @@ async def activevi_(_, message: Message):
         for chat in chats:
             served_chats.append(int(chat["chat_id"]))
     except Exception as e:
-        await message.reply_text(f"**Error:-** {e}")
+        await message.reply_text(f"**Kesalahan:-** {e}")
     text = ""
     j = 0
     for x in served_chats:
@@ -180,7 +180,7 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("Tidak Ada Obrolan Suara Aktif")
     else:
         await message.reply_text(
             f"**Active Video Calls:-**\n\n{text}",
