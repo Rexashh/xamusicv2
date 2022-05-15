@@ -34,10 +34,10 @@ __HELP__ = """
 
 
 /settheme
-- Set a theme for thumbnails.
+- Tetapkan tema untuk gambar mini.
 
 /theme
-- Check Theme for your chat.
+- Periksa Tema untuk obrolan Anda.
 """
 
 
@@ -55,7 +55,7 @@ async def settheme(_, message):
         "theme": theme,
     }
     await save_theme(message.chat.id, "theme", note)
-    await message.reply_text(f"Changed thumbnail theme to {theme}")
+    await message.reply_text(f"Mengubah tema gambar menjadi {theme}")
 
 
 @app.on_message(filters.command("theme"))
@@ -68,5 +68,5 @@ async def theme_func(_, message):
     else:
         theme = _note["theme"]
     await message.reply_text(
-        f"**{MUSIC_BOT_NAME} Thumbnails Theme**\n\n**Current Theme:-** {theme}\n\n**Available Themes:-** {' | '.join(themes2)} \n\nUse /settheme to change theme."
+        f"**{MUSIC_BOT_NAME} Tema Gambar**\n\n**Tema Saat Ini:-** {theme}\n\n**Tema yang tersedia:-** {' | '.join(themes2)} \n\ngunakan /settheme untuk mengubah tema."
     )
