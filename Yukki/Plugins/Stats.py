@@ -55,7 +55,7 @@ async def gstats(_, message):
     end = datetime.now()
     resp = (end - start).microseconds / 1000
     smex = f"""
-[•]<u>**General Stats**</u>
+[•]<u>**Statistik Umum**</u>
 
 Ping: `⚡{resp} ms`
 {uptime}
@@ -98,27 +98,27 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>**System Stats**</u>
 
-**{MUSIC_BOT_NAME} Uptime:** {uptime}
-**System Process:** Online
+**{MUSIC_BOT_NAME} Waktu aktif:** {uptime}
+**Proses Sistem:** Online
 **Platform:** {sc}
-**Architecture:** {arch}
+**Arsitektur:** {arch}
 **Ram:** {ram}
-**Python Version:** {pyver.split()[0]}
-**Pyrogram Version:** {pyrover}
-**PyTgCalls Version:** {pytgover.__version__}
+**Versi Python:** {pyver.split()[0]}
+**Versi Pyrogram:** {pyrover}
+**Versi PyTgCalls:** {pytgover.__version__}
 
 [•]<u>**CPU Stats**</u>
 
-**Physical Cores:** {p_core}
-**Total Cores:** {t_core}
-**Cpu Frequency:** {cpu_freq}
+**Inti Fisik:** {p_core}
+**Jumlah Inti:** {t_core}
+**Frekuensi CPU:** {cpu_freq}
 
 {cupc}
 """
         await CallbackQuery.edit_message_text(smex, reply_markup=stats2)
     if command == "sto_stats":
         await CallbackQuery.answer(
-            "Getting Storage Stats...", show_alert=True
+            "Mendapatkan Statistik Penyimpanan...", show_alert=True
         )
         hdd = psutil.disk_usage("/")
         total = hdd.total / (1024.0**3)
@@ -128,11 +128,11 @@ async def stats_markup(_, CallbackQuery):
         free = hdd.free / (1024.0**3)
         free = str(free)
         smex = f"""
-[•]<u>**Storage Stats**</u>
+[•]<u>**Statistik Penyimpanan**</u>
 
-**Storage Available:** {total[:4]} GiB
-**Storage Used:** {used[:4]} GiB
-**Storage Left:** {free[:4]} GiB"""
+**Penyimpanan tersedia:** {total[:4]} GiB
+**Penyimpanan Digunakan:** {used[:4]} GiB
+**Sisa Penyimpanan:** {free[:4]} GiB"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats3)
     if command == "bot_stats":
         await CallbackQuery.answer("Getting Bot Stats...", show_alert=True)
@@ -151,12 +151,12 @@ async def stats_markup(_, CallbackQuery):
             except Exception:
                 continue
         smex = f"""
-[•]<u>**Bot Stats**</u>
+[•]<u>**Statistik Bot**</u>
 
-**Modules Loaded:** {modules_loaded}
-**GBanned Users:** {blocked}
-**Sudo Users:** {j}
-**Served Chats:** {len(served_chats)}"""
+**Modul Dimuat:** {modules_loaded}
+**Pengguna yang Diblokir:** {blocked}
+**Pengguna Sudo:** {j}
+**Group yang Dilayani:** {len(served_chats)}"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats4)
     if command == "mongo_stats":
         await CallbackQuery.answer(
@@ -190,17 +190,17 @@ async def stats_markup(_, CallbackQuery):
         mongouptime = str(mongouptime)
         provider = status["repl"]["tags"]["provider"]
         smex = f"""
-[•]<u>**MongoDB Stats**</u>
+[•]<u>**Statistik MongoDB**</u>
 
-**Mongo Uptime:** {mongouptime[:4]} Days
-**Version:** {mver}
-**Database:** {database}
-**Provider:** {provider}
-**DB Size:** {datasize[:6]} Mb
-**Storage:** {storage} Mb
-**Collections:** {collections}
-**Keys:** {objects}
-**Total Queries:** `{query}`"""
+**Waktu Aktif Mongo:** {mongouptime[:4]} Days
+**Versi: kapan:** {mver}
+**Basis Data:** {database}
+**Pemberi:** {provider}
+**Ukuran DB:** {datasize[:6]} Mb
+**Penyimpanan:** {storage} Mb
+**Koleksi:** {collections}
+**Kunci:** {objects}
+**Jumlah Queries:** `{query}`"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats5)
     if command == "gen_stats":
         start = datetime.now()
@@ -211,7 +211,7 @@ async def stats_markup(_, CallbackQuery):
         end = datetime.now()
         resp = (end - start).microseconds / 1000
         smex = f"""
-[•]<u>General Stats</u>
+[•]<u>Statistik Umum</u>
 
 **Ping:** `⚡{resp} ms`
 {uptime}"""
@@ -300,40 +300,40 @@ async def stats_markup(_, CallbackQuery):
         if STRING1 != "None":
             msg += "\n\n<u>Assistant One:\n</u>"
             msg += f"""**Dialogs:** {total_ub}
-**Groups:** {groups_ub}
-**Channels:** {channels_ub}
-**Bots:** {bots_ub}
-**Users:** {privates_ub}"""
+**Grup:** {groups_ub}
+**Channel:** {channels_ub}
+**Bot:** {bots_ub}
+**pengguna:** {privates_ub}"""
 
         if STRING2 != "None":
             msg += "\n\n<u>Assistant Two:\n</u>"
             msg += f"""**Dialogs:** {total_ub2}
-**Groups:** {groups_ub2}
+**Grup:** {groups_ub2}
 **Channels:** {channels_ub2}
-**Bots:** {bots_ub2}
-**Users:** {privates_ub2}"""
+**Bot:** {bots_ub2}
+**Pengguna:** {privates_ub2}"""
 
         if STRING3 != "None":
             msg += "\n\n<u>Assistant Three:\n</u>"
             msg += f"""**Dialogs:** {total_ub3}
-**Groups:** {groups_ub3}
+**Grup:** {groups_ub3}
 **Channels:** {channels_ub3}
-**Bots:** {bots_ub3}
-**Users:** {privates_ub3}"""
+**Bot:** {bots_ub3}
+**Pengguna:** {privates_ub3}"""
 
         if STRING4 != "None":
             msg += "\n\n<u>Assistant Four:\n</u>"
             msg += f"""**Dialogs:** {total_ub4}
-**Groups:** {groups_ub4}
+**Grup:** {groups_ub4}
 **Channels:** {channels_ub4}
-**Bots:** {bots_ub4}
-**Users:** {privates_ub4}"""
+**Bot:** {bots_ub4}
+**Pengguna:** {privates_ub4}"""
 
         if STRING5 != "None":
             msg += "\n\n<u>Assistant Five:\n</u>"
             msg += f"""**Dialogs:** {total_ub5}
-**Groups:** {groups_ub5}
+**Grup:** {groups_ubGrup5}
 **Channels:** {channels_ub5}
-**Bots:** {bots_ub5}
-**Users:** {privates_ub5}"""
+**Bot:** {bots_ub5}
+**Pengguna:** {privates_ub5}"""
         await CallbackQuery.edit_message_text(msg, reply_markup=stats6)
