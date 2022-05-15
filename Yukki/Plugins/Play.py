@@ -46,7 +46,7 @@ async def play(_, message: Message):
         db_mem[message.chat.id] = {}
     if message.sender_chat:
         return await message.reply_text(
-            "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
+            "Anda adalah __Admin Anonim__ di Grup Obrolan ini!\nKembalikan kembali ke Akun Pengguna Dari Hak Admin."
         )
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
@@ -61,7 +61,7 @@ async def play(_, message: Message):
     url = get_url(message)
     if audio:
         mystic = await message.reply_text(
-            "🔄 Processing Audio... Please Wait!"
+            "🎶 Memproses Audio... Harap Tunggu!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
@@ -75,13 +75,13 @@ async def play(_, message: Message):
             pass
         if audio.file_size > 1073741824:
             return await mystic.edit_text(
-                "Audio File Size Should Be Less Than 150 mb"
+                "Ukuran File Audio Harus Kurang dari 150 mb"
             )
         duration_min = seconds_to_min(audio.duration)
         duration_sec = audio.duration
         if (audio.duration) > DURATION_LIMIT:
             return await mystic.edit_text(
-                f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
+                f"**Batas Durasi Terlampaui**\n\n**Durasi yang Diizinkan: **{DURATION_LIMIT_MIN} minute(s)\n**Durasi yang Diterima:** {duration_min} minute(s)"
             )
         file_name = (
             audio.file_unique_id
@@ -111,7 +111,7 @@ async def play(_, message: Message):
         limit = await get_video_limit(141414)
         if not limit:
             return await message.reply_text(
-                "**No Limit Defined for Video Calls**\n\nSet a Limit for Number of Maximum Video Calls allowed on Bot by /set_video_limit [Sudo Users Only]"
+                "**Tidak Ada Batas yang Ditentukan untuk Panggilan Video**\n\nTetapkan Batas untuk Jumlah Panggilan Video Maksimum yang diizinkan di Bot dengan cara /set_video_limit [Khusus Pengguna Sudo]"
             )
         count = len(await get_active_video_chats())
         if int(count) == int(limit):
@@ -119,16 +119,16 @@ async def play(_, message: Message):
                 pass
             else:
                 return await message.reply_text(
-                    "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
+                    "Maaf! Bot hanya mengizinkan panggilan video dalam jumlah terbatas karena masalah kelebihan CPU. Banyak obrolan lain menggunakan panggilan video sekarang. Coba beralih ke audio atau coba lagi nanti"
                 )
         mystic = await message.reply_text(
-            "🔄 Processing Video... Please Wait!"
+            "🎥 Memproses Video... Harap tunggu!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
             if read:
                 return await mystic.edit(
-                    "Live Streaming Playing...Stop it to play music"
+                    "Pemutaran Live Streaming... Hentikan untuk memutar musik"
                 )
             else:
                 pass
@@ -158,7 +158,7 @@ async def play(_, message: Message):
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎Judul: **{title}\n\n⏳Durasi:** {duration_min} Mins\n\n__[Dapatkan Informasi Tambahan Tentang Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -169,7 +169,7 @@ async def play(_, message: Message):
             await message.reply_photo(
                 photo="Utils/Playlist.jpg",
                 caption=(
-                    "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
+                    "**Penggunaan:** /play [Nama Musik atau Tautan Youtube atau Balas Audio]\n\nJika Anda ingin memutar Daftar Putar! Pilih salah satu dari Bawah."
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -189,7 +189,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎Judul: **{title}\n\n⏳Durasi:** {duration_min} Mins\n\n__[Dapatkan Informasi Tambahan Tentang Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -202,7 +202,7 @@ async def Music_Stream(_, CallbackQuery):
         read1 = db_mem[CallbackQuery.message.chat.id]["live_check"]
         if read1:
             return await CallbackQuery.answer(
-                "Live Streaming Playing...Stop it to play music",
+                "Mulai streaming video... Hentikan untuk memutar musik",
                 show_alert=True,
             )
         else:
@@ -229,11 +229,11 @@ async def Music_Stream(_, CallbackQuery):
     title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await CallbackQuery.message.reply_text(
-            f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
+            f"**Batas Durasi Terlampaui**\n\n**Durasi yang Diizinkan: **{DURATION_LIMIT_MIN} menit(s)\n**Durasi yang Diterima:** {duration_min} menit(s)"
         )
     await CallbackQuery.answer(f"Processing:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"**{MUSIC_BOT_NAME} Downloader**\n\n**Judul:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -263,7 +263,7 @@ async def search_query_more(_, CallbackQuery):
     query, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "Search Your Own Music. You're not allowed to use this button.",
+            "Cari Musik Anda Sendiri. Anda tidak diizinkan menggunakan tombol ini.",
             show_alert=True,
         )
     await CallbackQuery.answer("Searching More Results")
@@ -271,7 +271,7 @@ async def search_query_more(_, CallbackQuery):
     med = InputMediaPhoto(
         media="Utils/Result.JPEG",
         caption=(
-            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>"
+            f"1️⃣<b>{results[0]['judul']}</b>\n  ┗  🔗 <u>__[Dapatkan Informasi tambahan](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['judul']}</b>\n  ┗  🔗 <u>__[Dapatkan Informasi Tambahan](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['judul']}</b>\n  ┗  🔗 <u>__[Dapatkan Informasi Tambahan](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['judul']}</b>\n  ┗  🔗 <u>__[Dapatkan Informasi Tambahan](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['judul']}</b>\n  ┗  🔗 <u>__[Dapatkan Informasi Tambahan](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>"
         ),
     )
     buttons = search_markup(
@@ -301,7 +301,7 @@ async def popat(_, CallbackQuery):
     i, query, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song", show_alert=True
+            "Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True
         )
     results = YoutubeSearch(query, max_results=10).to_dict()
     if int(i) == 1:
@@ -378,7 +378,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎Judul: **{title}\n\n⏳Durasi:** {duration_min} Mins\n\n__[Get Informasi Tambahan Tentang Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -401,7 +401,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎Judul: **{title}\n\n⏳Durasi:** {duration_min} Mins\n\n__[Dapatkan Informasi Tambahan Tentang Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
