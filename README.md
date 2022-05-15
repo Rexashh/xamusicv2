@@ -1,56 +1,40 @@
-<p align="center"><img src="https://telegra.ph/file/fecb50042cabee93dc20b.jpg" alt="ICON" width="250" height="250"/></p>
+![](https://github.com/Rexashh/yukkixa/blob/4d0892d9b4dd75231ec240c90a4571f755a77864/Utils/e1f986194ed9ce5f62cc9d26e7f01ee0.gif)
 
 <h4 align="center">
-    A Telegram Music+video Bot written in Python using Pyrogram and Py-Tgcalls 
+    𝙍𝙀𝙋𝙊𝙎𝙄𝙏𝙊𝙍𝙔 𝙄𝙉𝙄 𝙈𝙄𝙇𝙄𝙆 𝙔𝙐𝙆𝙆𝙄 𝙑𝙀𝙍𝙎𝙄 𝙇𝘼𝙒𝘼𝙎, 𝘿𝘼𝙉 𝙎𝘼𝙔𝘼 𝙃𝘼𝙉𝙔𝘼 𝘾𝙇𝙊𝙉𝙄𝙉𝙂 𝙈𝙀𝙍𝙐𝘽𝘼𝙃 𝘽𝘼𝙃𝘼𝙎𝘼 𝙈𝙀𝙉𝙅𝘼𝘿𝙄 𝘽𝘼𝙃𝘼𝙎𝘼 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼 𝘿𝘼𝙉 𝙇𝘼𝙄𝙉 𝙇𝘼𝙄𝙉.
 </h4>
 
 
     
-# Xa x Yukki Music Bot
-A Powerful Telegram Music+Video Bot by which you can stream songs, videos and even live streams in your group calls via various sources. It comes with  user friendly and easy to use yet elegant features.
-
-    
+# 𝗫𝗔 𝗠𝗨𝗦𝗜𝗖 𝗩2
 
 <details>
-<summary><b>🔗 String Session</b></summary>
+<summary><b>🚀 sᴛʀɪɴɢ sᴇssɪᴏɴ</b></summary>
 <br>
-    
-
-<h4> Generate Session via Telegram Xa String Bot: </h4>    
-<p><a href="https://t.me/xastringrobot"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
+<h4>ᴀᴍʙɪʟ sᴇssɪᴏɴ ᴠɪᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇʟᴀʟᴜɪ xᴀ sᴛʀɪɴɢ ʙᴏᴛ: </h4>    
+<p><a href="https://t.me/xastringrobot"><img src="https://img.shields.io/badge/xᴀ%20sᴛʀɪɴɢ%20ʙᴏᴛ-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
     
 </details>
 
 <details>
-<summary><b>🔗 Deploy to Heroku</b></summary>
+<summary><b>🚀 ᴅᴇᴘʟᴏʏ ᴅɪʜᴇʀᴏᴋᴜ</b></summary>
 <br>
 
-> Heroku has two vars[ HEROKU_API_KEY & HEROKU_APP_NAME ] for Updater to work. 
-> By setting those two vars you can get logs of your heroku app, set var, edit var, delete vars , check dyno usage and update bot. 
-> Those two vars are not Mandatory! You can leave them blank too. 
-    
-<h4>Click the button below to deploy Yukki on Heroku!</h4>    
-<p><a href="https://dashboard.heroku.com/new?template=https://github.com/Rexashh/yukkixa/tree/master"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
-    
+<h4>ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪʙᴀᴡᴀʜ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴ ᴅᴇᴘʟᴏʏ xᴀ ᴍᴜsɪᴄ ᴠ2  ᴅɪʜᴇʀᴏᴋᴜ!</h4>    
+<p><a href="https://dashboard.heroku.com/new?template=https://github.com/Rexashh/XaMusicv2/tree/main"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>    
 
+</details>
 
-## Contact & Support
+<details>
+<summary><b>🚀 ᴄᴏɴᴛᴀᴄᴛ & sᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋs</b></summary>
 
-- [Telegram Channel](https://t.me/tirexgugel)
-- [Telegram Support Group](https://t.me/rexaprivateroom)
-- [Contact Owner](https://t.me/JustRex)
+## ᴄᴏɴᴛᴀᴄᴛ
+- [ᴄʜᴀɴɴᴇʟ](https://t.me/tirexgugel)
+- [ɢʀᴏᴜᴘ](https://t.me/rexaprivateroom)
+- [ᴏᴡɴᴇʀ](https://t.me/JustRex)
 
+## sᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋs
 
-## License
+sᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋs ᴜɴᴛᴜᴋ ᴛᴇᴀᴍ ʏᴜᴋᴋɪ sᴇʙᴀɢᴀɪ ʙᴀsᴇ ᴅᴀʀɪ ʀᴇᴘᴏ ɪɴɪ:
 
-Distributed under the [GNU General Public License v3.0 License.](https://github.com/notreallyshikhar/YukkiMusicBot/blob/main/LICENSE) See `LICENSE.md` for more information.
-
-## Acknowledgements
-
-Special thanks to these amazing projects/people which/who help power Yukki Music Bot:
-
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
-- [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
-- [CallsMusic Team](https://github.com/Callsmusic)
-- [TheHamkerCat](https://github.com/TheHamkerCat)
-- [Charon Baglari](https://github.com/XCBv021)
+- [TeamYukki](https://github.com/TeamYukki)
