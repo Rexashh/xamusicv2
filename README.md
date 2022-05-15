@@ -12,7 +12,7 @@
 <summary><b>🚀 sᴛʀɪɴɢ sᴇssɪᴏɴ</b></summary>
 <br>
 <h4>ᴀᴍʙɪʟ sᴇssɪᴏɴ ᴠɪᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇʟᴀʟᴜɪ xᴀ sᴛʀɪɴɢ ʙᴏᴛ: </h4>    
-<p><a href="https://t.me/xastringrobot"><img src="https://img.shields.io/badge/xᴀ%20sᴛʀɪɴɢ%20ʙᴏᴛ-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
+<p><a href="https://t.me/xastringrobot"><img src="https://img.shields.io/badge/xa%20string%20bot-black?style=for-the-badge&logo=appveyor" width="200""/></a></p>
     
 </details>
 
@@ -21,7 +21,7 @@
 <br>
 
 <h4>ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪʙᴀᴡᴀʜ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴ ᴅᴇᴘʟᴏʏ xᴀ ᴍᴜsɪᴄ ᴠ2  ᴅɪʜᴇʀᴏᴋᴜ!</h4>    
-<p><a href="https://dashboard.heroku.com/new?template=https://github.com/Rexashh/XaMusicv2/tree/main"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>    
+<p><a href="https://dashboard.heroku.com/new?template=https://github.com/Rexashh/Xamusicv2/tree/master"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>    
 
 </details>
 
