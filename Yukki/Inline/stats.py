@@ -162,7 +162,7 @@ stats7 = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Getting Assistant Stats....",
+                text="Sedang Mendapatkan Statistik Asisten....",
                 callback_data=f"wait_stats",
             )
         ]
