@@ -6,8 +6,6 @@
   "python3",
   "telegram",
   "bot",
-  "Yukki",
-  "YukkiMusicBot",
   "telegram-bot",
   "pyrogram"
   ],
@@ -72,26 +70,6 @@
       "description": "Masukan Pyrogram String Session. Untuk Asisstant ke satu.",
       "value": "",
       "required": true
-    },
-    "STRING_SESSION2": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant kedua, jika tidak ada lewati atau /skip",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION3": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant ketiga, jika tidak ada lewati atau /skip",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION4": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant keempat, jika tidak ada lewati atau /skip",
-      "value": "",
-      "required": false
-    },
-    "STRING_SESSION5": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant kelima, jika tidak ada lewati atau /skip",
-      "value": "",
-      "required": false
     },
     "HEROKU_API_KEY": {
       "description": "API Key akun Heroku Anda",
