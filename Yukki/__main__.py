@@ -122,7 +122,7 @@ async def initiate_bot():
             )
         except Exception as e:
             print(
-                "\nAssistant Account 1 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nAkun Asisten 1 gagal mengakses Saluran log. Pastikan Anda telah menambahkan Asisten Anda ke saluran log Anda dan dipromosikan sebagai admin!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
