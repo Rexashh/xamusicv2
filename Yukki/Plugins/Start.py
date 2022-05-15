@@ -244,7 +244,7 @@ async def start_markup_check(_, CallbackQuery):
         volume = 25
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Audio ...")
         except:
             return await CallbackQuery.answer("No active Group Call...")
         await save_start(c_id, "assistant", assis)
@@ -260,7 +260,7 @@ async def start_markup_check(_, CallbackQuery):
         volume = 50
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Audio ...")
         except:
             return await CallbackQuery.answer("No active Group Call...")
         await save_start(c_id, "assistant", assis)
@@ -276,9 +276,9 @@ async def start_markup_check(_, CallbackQuery):
         volume = 100
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Audio ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak ada OS Grup yang aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
@@ -380,7 +380,7 @@ async def start_markup_check(_, CallbackQuery):
         }
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Audio ...")
         except:
             return await CallbackQuery.answer("No active Group Call...")
         await save_start(c_id, "assistant", assis)
