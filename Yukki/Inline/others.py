@@ -11,7 +11,7 @@ def others_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🔍 Mencari Lirik",
+                text="🔍 Cari Lirik",
                 callback_data=f"lyrics {videoid}|{user_id}",
             )
         ],
@@ -37,7 +37,7 @@ def others_markup(videoid, user_id):
                 callback_data=f"pr_go_back_timer {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🗑 Tutup Menu",
+                text="🗑 Tutup",
                 callback_data=f"close",
             ),
         ],
@@ -61,7 +61,7 @@ def download_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="⬅️ Kembali", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="🗑 Tutup", callback_data=f"close"),
         ],
     ]
     return buttons
