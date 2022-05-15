@@ -60,7 +60,7 @@ async def welcome(_, message: Message):
                 ) = await get_assistant_details(ran_ass)
                 out = start_pannel()
                 await message.reply_text(
-                    f"Selamat Datang Di {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}",
+                    f"Halo Saya adalah {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}",
                     reply_markup=InlineKeyboardMarkup(out[1]),
                 )
             if member.id in ASSIDS:
@@ -71,7 +71,7 @@ async def welcome(_, message: Message):
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    f"Seorang anggota Pengguna Sudo {MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung dengan Group ini."
+                    f"Seorang anggota Pengguna Sudo {MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung dengan Group ini, Tolong Sapa dia."
                 )
             return
         except:
@@ -85,7 +85,7 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"Terima kasih telah mengundang saya di {message.chat.title}.\n{MUSIC_BOT_NAME} masih hidup.\n\nUntuk bantuan atau bantuan apa pun, periksa grup dan saluran dukungan kami.",
+            f"Terima kasih telah mengundang saya di {message.chat.title}.\n{MUSIC_BOT_NAME} masih hidup.\n\nUntuk bantuan atau bantuan apa pun, periksa grup dan Channel dukungan kami.",
             reply_markup=InlineKeyboardMarkup(out[1]),
         ),
     )
@@ -119,7 +119,7 @@ async def okaybhai(_, CallbackQuery):
     await CallbackQuery.answer("Going Back ...")
     out = start_pannel()
     await CallbackQuery.edit_message_text(
-        text=f"Thanks for having me in {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+        text=f"Terima kasih telah memasukkan saya {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}Hidup sempurna.\n\Untuk bantuan atau bantuan apa pun, lihat grup dan Channel Support kami.",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
@@ -157,12 +157,12 @@ async def EVE(_, CallbackQuery):
         await CallbackQuery.answer("Changes Saved")
         await add_nonadmin_chat(chat_id)
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\nAdmins Commands Mode to **Everyone**\n\nNow anyone present in this group can skip, pause, resume, stop music.\n\nChanges Done By @{checking}",
+            text=f"{text}\n\nAdmins Memerintahkan Mode ke **Semua Orang**\n\nSekarang siapa pun yang ada di grup ini dapat melewati, menjeda, melanjutkan, menghentikan musik.\n\nPerubahan Dilakukan Oleh @{checking}",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
         await CallbackQuery.answer(
-            "Commands Mode is Already Set To EVERYONE", show_alert=True
+            "Mode Perintah Sudah Disetel Untuk SEMUA ORANG", show_alert=True
         )
 
 
@@ -175,13 +175,13 @@ async def AMS(_, CallbackQuery):
     is_non_admin = await is_nonadmin_chat(chat_id)
     if not is_non_admin:
         await CallbackQuery.answer(
-            "Commands Mode is Already Set To ADMINS ONLY", show_alert=True
+            "Mode Perintah Sudah Disetel Ke ADMIN SAJA", show_alert=True
         )
     else:
         await CallbackQuery.answer("Changes Saved")
         await remove_nonadmin_chat(chat_id)
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\nSet Commands Mode to **Admins**\n\nNow only Admins present in this group can skip, pause, resume, stop musics.\n\nChanges Done By @{checking}",
+            text=f"{text}\n\nSetel Mode Perintah ke **Admins**\n\nSekarang hanya Admin yang ada di grup ini yang dapat melewati, menjeda, melanjutkan, menghentikan musik.\n\nPerubahan Dilakukan Oleh @{checking}",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -292,9 +292,9 @@ async def start_markup_check(_, CallbackQuery):
         volume = 200
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Audio ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak ada Panggilan Grup yang aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
@@ -445,7 +445,7 @@ async def start_markup_check(_, CallbackQuery):
         else:
             j = 0
             await CallbackQuery.edit_message_text(
-                "Fetching Authorised Users... Please Wait"
+                "Mengambil Pengguna Resmi... Harap Tunggu"
             )
             msg = f"**Authorised Users List[AUL]:**\n\n"
             for note in _playlist:
@@ -463,7 +463,7 @@ async def start_markup_check(_, CallbackQuery):
                 except Exception:
                     continue
                 msg += f"{j}➤ {user}[`{user_id}`]\n"
-                msg += f"    ┗ Added By:- {admin_name}[`{admin_id}`]\n\n"
+                msg += f"    ┗ Ditambahkan oleh:- {admin_name}[`{admin_id}`]\n\n"
             await CallbackQuery.edit_message_text(
                 msg, reply_markup=InlineKeyboardMarkup(buttons)
             )
@@ -481,10 +481,10 @@ async def start_markup_check(_, CallbackQuery):
     if command == "RAT":
         meme = psutil.virtual_memory().percent
         await CallbackQuery.answer(
-            f"Bot's Memory Usage: {meme}%", show_alert=True
+            f"Penggunaan Memori Bot: {meme}%", show_alert=True
         )
     if command == "DIT":
         diske = psutil.disk_usage("/").percent
         await CallbackQuery.answer(
-            f"Yukki Disk Usage: {diske}%", show_alert=True
+            f"Penggunaan Disk: {diske}%", show_alert=True
         )
