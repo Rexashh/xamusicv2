@@ -394,9 +394,9 @@ async def help_parser(name, keyboard=None):
     return (
         """Hello {first_name},
 
-Click on the buttons for more information.
+Klik pada tombol untuk informasi lebih lanjut.
 
-All commands can be used with: /
+Semua perintah dapat digunakan dengan : /
 """.format(
             first_name=name
         ),
@@ -429,9 +429,9 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f"""Hello {query.from_user.first_name},
 
-Click on the buttons for more information.
+Klik tombol untuk informasi lebih lanjut.
 
-All commands can be used with: /
+Semua perintah dapat digunakan dengan: /
  """
     if mod_match:
         module = mod_match.group(1)
@@ -441,7 +441,7 @@ All commands can be used with: /
                 pass
             else:
                 return await query.answer(
-                    "This Button can only be accessed by SUDO USERS",
+                    "Tombol ini hanya dapat diakses oleh PENGGUNA SUDO",
                     show_alert=True,
                 )
         text = (
