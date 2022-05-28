@@ -3,7 +3,7 @@ services:
   worker:
     build: .
     environment:
-      STRING_SESSION: $STRING_SESSION
+      STRING_SESSION1: $STRING_SESSION1
       API_ID: $API_ID
       API_HASH: $API_HASH
       MONGO_DB_URI: $MONGO_DB_URI
@@ -14,3 +14,4 @@ services:
       DURATION_LIMIT: $DURATION_LIMIT
       LOG_SESSION: $LOG_SESSION
       START_IMG_URL: $START_IMG_URL
+
